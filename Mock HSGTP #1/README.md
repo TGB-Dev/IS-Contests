@@ -1,6 +1,6 @@
 # Mock HSGTP #1
 
-Run the following command to get the list of merchandise winners. Seed is the total points of participants who ranked 1 to 5.
+Run the following command to get the list of merchandise winners. Seed is the number of official participants.
 
 ```bash
 
