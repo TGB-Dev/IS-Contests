@@ -49,11 +49,11 @@ def main():
         reader = csv.DictReader(f)
         rows = list(reader)
 
-    winners = list(map(lambda x: x['Username'], rows[:4]))
-    print('Top 4:\n' + '\n'.join(winners))
+    winners = list(map(lambda x: x['Username'], rows[:2]))
+    print('Top 2:\n' + '\n'.join(winners))
 
     candidates = {}
-    rows = rows[4:]
+    rows = rows[2:]
     for row in rows:
         total_points = float(row["Points"])
         if (total_points > 0):
@@ -63,16 +63,16 @@ def main():
     rnd.setSeed(args.seed)
     winners = []
 
-    for _ in range(6):
+    for _ in range(3):
         names = list(candidates.keys())
         id = rnd.next(len(names))
         winners.append(names[id])
         candidates.pop(names[id])
 
-    assert len(winners) == 6
+    assert len(winners) == 3
 
     print('2 Random people getting merch:\n' + '\n'.join(winners[:2]))
-    print('4 Random people getting voucher:\n' + '\n'.join(winners[2:]))
+    print('1 Random person getting voucher:\n' + '\n'.join(winners[2:]))
 
 
 if __name__ == "__main__":
